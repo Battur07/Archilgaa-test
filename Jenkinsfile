@@ -4,19 +4,19 @@ pipeline {
         git 'GIT' 
     }
     stages {
-        stage('Clone Repo') {
+        stage('Кодыг татах хэсэг') {
             steps {
                 checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Battur07/Archilgaa-test.git']])
             }
         }
-        stage('Build Docker Image') {
+        stage('Docker Image үүсгэж буй хэсэг') {
             steps {
                 script {
-                    sh 'sudo docker build -t docker-image1:latest .'
+                    sh 'sudo docker build -t docker-image1:latest .'dls
                 }
             }
         }
-        stage('Deploy Docker Image') {
+        stage('Docker Image Deploy хийх хэсэг') {
             steps {
                 script {
                     def containerExists = sh(script: 'sudo docker ps -a | grep docker-image1-service', returnStatus: true) == 0
