@@ -26,14 +26,14 @@ pipeline {
                     }
                    
                 }
-                CONTAINER_NAME="docker-image1-service"
-                if sudo docker ps -a --format '{{.Names}}' | grep -Eq "^${CONTAINER_NAME}\$"; then
- 
-    sudo docker stop "${CONTAINER_NAME}"
-    sudo docker rm "${CONTAINER_NAME}"
-fi
-
-sh "sudo docker run -p 3000:3000 --name ${CONTAINER_NAME} --detach --rm docker-image1:latest"
+             def CONTAINER_NAME = 'docker-image1-service'
+                  
+                    if (sh(returnStatus: true, script: "sudo docker ps -a --format '{{.Names}}' | grep -Eq '^${CONTAINER_NAME}$'")) {
+                      
+                        sh "sudo docker stop ${CONTAINER_NAME}"
+                        sh "sudo docker rm ${CONTAINER_NAME}"
+                    }
+                    sh "sudo docker run -p 3000:3000 --name ${CONTAINER_NAME} --detach --rm docker-image1:latest"
             }
         }
     }
