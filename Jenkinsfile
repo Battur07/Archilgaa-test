@@ -12,7 +12,7 @@ pipeline {
         stage('Docker Image үүсгэж буй хэсэг') {
             steps {
                 script {
-                    sh 'sudo docker build -t docker-image1:latest .'dls
+                    sh 'sudo docker build -t docker-image1:latest .
                 }
             }
         }
