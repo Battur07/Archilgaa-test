@@ -6,7 +6,7 @@ pipeline{
     stages {
         stage('Clone Repo') {
             steps{
-                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Battur07/last-test.git']])
+                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Battur07/Archilgaa-test.git']])
             }
         }
         stage('Build Docker Image') {
