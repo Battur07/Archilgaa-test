@@ -12,7 +12,7 @@ pipeline{
         stage('Build Docker Image') {
             steps {
                 script {
-                  sh 'echo "Battur594" | sudo -S docker build -t docker-image1:latest .'
+                  sh 'echo "admin" | sudo -S docker build -t docker-image1:latest .'
                 }
             }
         }
