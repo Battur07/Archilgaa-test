@@ -1,4 +1,3 @@
-# Use the base image with OpenJDK
 FROM node:16-alpine
 
 # Set the working directory inside the container
