@@ -9,6 +9,7 @@ pipeline{
                 checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Battur07/Archilgaa-test.git']])
             }
         }
+        #end
         stage('Build Docker Image') {
             steps {
                 script {
