@@ -12,7 +12,7 @@ function Home() {
         <Particle />
         <Container className="home-content">
           <Row>
-            {/* <Col md={7} className="home-header">
+            <Col md={7} className="home-header">
               <h1 style={{ paddingBottom: 15 }} className="heading">
                 Hi Guys!{" "}
                 <span className="wave" role="img" aria-labelledby="wave">
@@ -28,7 +28,7 @@ function Home() {
               <div style={{ padding: 50, textAlign: "left" }}>
                 <Type />
               </div>
-            </Col> */}
+            </Col>
 
             <Col md={5} style={{ paddingBottom: 20 }}>
               <img
