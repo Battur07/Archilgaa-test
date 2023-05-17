@@ -26,7 +26,15 @@ pipeline {
                     }
                    
                 }
-                 sh 'sudo docker run -p 3000:3000 --name docker-image1-service --rm docker-image1:latest'
+                CONTAINER_NAME="docker-image1-service"
+                if sudo docker ps -a --format '{{.Names}}' | grep -Eq "^${CONTAINER_NAME}\$"; then
+    # Stop and remove the existing container
+    sudo docker stop "${CONTAINER_NAME}"
+    sudo docker rm "${CONTAINER_NAME}"
+fi
+
+# Run the Docker container
+sh "sudo docker run -p 3000:3000 --name ${CONTAINER_NAME} --detach --rm docker-image1:latest"
             }
         }
     }
