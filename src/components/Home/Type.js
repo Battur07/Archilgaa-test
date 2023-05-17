@@ -6,7 +6,7 @@ function Type() {
     <Typewriter
       options={{
         strings: [
-          "Баттөр",
+          "Бат",
           "Баяржаргал",
           "Ариун-Эрдэнэ",
           "Хулан",
