@@ -5,16 +5,7 @@ function Type() {
   return (
     <Typewriter
       options={{
-<<<<<<< HEAD
-        strings: ["БаттөрRutu", "Баяржаргал", "Ариун-Эрдэнэ", "Хулан"],
-=======
-        strings: [
-          "Бат",
-          "Баяржаргал",
-          "Ариун-Эрдэнэ",
-          "Хулан",
-        ],
->>>>>>> 41b53d2e8fba9d2ca0fad1419412260ec4d07634
+        strings: ["Ruturu", "Баяржаргал", "Ариун-Эрдэнэ", "Хулан"],
         autoStart: true,
         loop: true,
         deleteSpeed: 50,
