@@ -19,12 +19,12 @@ pipeline {
         stage('Docker Image Deploy хийх хэсэг') {
             steps {
                 script {
-                    def containerExists = sh(script: 'sudo docker ps -a | grep docker-image1-service', returnStatus: true) == 1
+                    def containerExists = sh(script: 'sudo docker ps -a | grep docker-image1-service', returnStatus: true) == 0
                     if (containerExists) {
                         sh 'sudo docker stop docker-image1-service'
                         sh 'sudo docker rm docker-image1-service'
                     }
-                    sh "sudo docker run -p 3000:3000 --name docker-image1-service --detach --rm docker-image1:latest"
+                    sh "sudo docker run -p 3000:3000 --name docker-image1-service --detach --rm docker-image1-service:latest"
                 }
             }
         }
