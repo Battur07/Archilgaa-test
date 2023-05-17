@@ -27,13 +27,13 @@ pipeline {
                    
                 }
              def CONTAINER_NAME = 'docker-image1-service'
-                  
-                    if (sh(returnStatus: true, script: "sudo docker ps -a --format '{{.Names}}' | grep -Eq '^${CONTAINER_NAME}$'")) {
-                      
+                    if (sh(returnStatus: true, script: 'sudo docker ps -a --format '{{.Names}}' | grep -Eq '^${CONTAINER_NAME}$'')) {
+                        // Stop and remove the existing container
                         sh "sudo docker stop ${CONTAINER_NAME}"
                         sh "sudo docker rm ${CONTAINER_NAME}"
                     }
                     sh "sudo docker run -p 3000:3000 --name ${CONTAINER_NAME} --detach --rm docker-image1:latest"
+                
             }
         }
     }
