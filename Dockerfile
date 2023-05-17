@@ -10,7 +10,7 @@ RUN npm install
 
 COPY . .
 
-RUN npm run build
+RUN npm run
 
 # Expose the port on which your application listens
 EXPOSE 3000
