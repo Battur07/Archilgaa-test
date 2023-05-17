@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools{
-        git 'Maven' 
+        git 'GIT' 
     }
     stages {
         stage('Clone Repo') {
