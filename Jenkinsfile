@@ -25,9 +25,9 @@ pipeline {
                         sh 'sudo docker rm docker-image1-service'
                     }
                     sh 'sudo docker run -p 3000:3000 --name docker-image1-service docker-image1:latest'
-                    // End the stage here
-                    return
                 }
+                // End the stage here
+                error("Deployment completed")
             }
         }
     }
