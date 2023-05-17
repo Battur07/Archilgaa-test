@@ -24,8 +24,9 @@ pipeline{
                 sh 'sudo docker stop docker-image1-service'
                 sh 'sudo docker rm docker-image1-service'
                 }
+                      sh 'sudo docker run -p 3000:3000 --name docker-image1-service docker-image1:latest'
                 }
-             sh 'sudo docker run -p 3000:3000 --name docker-image1-service docker-image1:latest'
+           
             }
         }
     }
