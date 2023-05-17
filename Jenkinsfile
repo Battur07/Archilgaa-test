@@ -26,7 +26,7 @@ pipeline {
                     }
                    
                 }
-                 sh 'sudo docker run -p 3000:3000 --name docker-image1-service --detach --rm docker-image1:latest'
+                 sh 'sudo docker run -p 3000:3000 --name docker-image1-service --rm docker-image1:latest'
             }
         }
     }
